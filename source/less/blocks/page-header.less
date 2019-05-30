@@ -1,0 +1,30 @@
+.page-header {
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 18px 20px 14px 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 240px;
+    margin: 0 auto;
+  }
+
+  @media @tablet-width {
+    padding: 18px 4.7% 14px 4.7%;
+    min-height: 110px;
+  }
+
+  @media @desktop-width {
+    padding-left: 10.3%;
+    padding-right: 10.3%;
+
+    &__container {
+      max-width: 1170px;
+    }
+  }
+}

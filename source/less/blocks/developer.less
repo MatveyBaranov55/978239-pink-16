@@ -1,0 +1,29 @@
+.developer {
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: @font-family-main;
+  text-decoration: none;
+
+  img {
+    vertical-align: middle;
+  }
+
+  &:link,
+  &:active,
+  &:visited {
+    color: @color-blue-dark;
+  }
+
+  &__text {
+    margin-right: 30px;
+    font-size: @font-size-small;
+    font-weight: normal;
+    line-height: 1.28;
+  }
+
+  @media @tablet-width {
+    margin: 0;
+  }
+}
