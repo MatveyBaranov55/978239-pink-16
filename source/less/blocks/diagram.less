@@ -1,0 +1,129 @@
+.diagram {
+  display: none;
+  padding: 55px 7% 40px;
+  background-color: @color-white;
+
+  &__item {
+    position: relative;
+    margin: 50px 0 50px 50%;
+
+    p {
+      margin-bottom: 15px;
+      font-size: @fs-14;
+      font-weight: normal;
+      line-height: @lh-24;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 15px;
+    color: @color-black;
+    font-size: @fs-30;
+    font-weight: bold;
+    line-height: @lh-36;
+  }
+
+  &__link {
+    color: @color-pink;
+    font-size: @fs-14;
+    font-weight: normal;
+    line-height: @lh-24;
+  }
+
+  @media @tablet-width {
+    display: block;
+
+    &__item::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -305px;
+      top: -40px;
+      width: 242px;
+      height: 280px;
+      background: url('../img/icon-timer.svg') no-repeat center;
+      background-size: cover;
+    }
+
+    &__item::after {
+      content: '24';
+      display: block;
+      position: absolute;
+      left: -288px;
+      top: 17px;
+      width: 205px;
+      height: 205px;
+      text-align: center;
+      font-size: 100px;
+      font-weight: bold;
+      line-height: 200px;
+      color: #d22856;
+      background: url('../img/icon-editor-diagram-fill.svg') no-repeat center;
+      background-size: contain;
+    }
+
+    &__title {
+      max-width: 180px;
+    }
+
+    &__item {
+      max-width: 300px;
+    }
+  }
+
+  @media @desktop-width {
+    padding: 65px 7% 90px;
+    background-color: @color-grey-light;
+    background-position: 15% center;
+
+    &__item::before {
+      left: -345px;
+      top: -93px;
+      width: 300px;
+      height: 346px;
+    }
+
+    &__item::after {
+      left: -321px;
+      top: -24px;
+      width: 253px;
+      height: 254px;
+      font-size: 120px;
+      line-height: 240px;
+    }
+
+    &__container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    &__title {
+      max-width: 310px;
+      line-height: 1;
+
+      br {
+        display: none;
+      }
+    }
+
+    &__item {
+      margin-left: 38%;
+      max-width: 530px;
+
+      p {
+        font-size: @fs-18;
+        line-height: @lh-30;
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    &__link {
+      font-size: @fs-18;
+      line-height: @lh-30;
+    }
+  }
+}

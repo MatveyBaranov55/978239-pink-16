@@ -1,0 +1,241 @@
+.review-slider {
+  position: relative;
+  padding: 45px 6%;
+  background: @color-white;
+
+  input {
+    display: none;
+  }
+
+  &__slides-container {
+    overflow: hidden;
+  }
+
+  &__slides {
+    width: 300%;
+    transition: transform .8s ease;
+    display: flex;
+  }
+
+  &__item {
+    margin: 0;
+    text-align: center;
+    font-size: @fs-14;
+    font-weight: normal;
+    line-height: @lh-30;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    color: @color-black;
+    font-size: @fs-18;
+    font-weight: bold;
+    line-height: @lh-30;
+  }
+
+  &__author {
+    display: none;
+    margin: 0 auto;
+  }
+
+  &__controls {
+    display: flex;
+    .slider-controls;
+  }
+
+  #btn-1:checked ~ .review-slider__controls label[for='btn-1'],
+  #btn-2:checked ~ .review-slider__controls label[for='btn-2'],
+  #btn-3:checked ~ .review-slider__controls label[for='btn-3'] {
+    box-shadow: 0 0 0 3px #283645;
+    overflow: visible;
+    background-color: transparent;
+  }
+
+  @media @tablet-width {
+    padding: 35px 5.7% 45px;
+
+    &__item {
+      width: 100%;
+      font-size: @fs-18;
+      line-height: @lh-30;
+
+      p {
+        max-width: 630px;
+        margin: 0 auto 30px;
+      }
+    }
+
+    &__title {
+      display: none;
+    }
+
+    &__author {
+      display: block;
+      width: 300px;
+      font-size: @fs-14;
+      font-weight: normal;
+      line-height: @lh-30;
+    }
+
+    &__author-title {
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: @lh-30;
+      color: @color-black;
+    }
+  }
+
+  @media @desktop-width {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 55px;
+      left: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      background: @color-white url('../img/icon-quotes.svg') no-repeat center;
+    }
+
+    &__slides-container {
+      margin-top: 150px;
+    }
+
+    &__item {
+      font-size: @fs-18;
+      line-height: @lh-30;
+
+      p {
+        max-width: 720px;
+      }
+    }
+
+    &__quotes {
+      display: none;
+    }
+
+    &__author {
+      font-size: @fs-18;
+      line-height: @lh-30;
+    }
+
+    &__author-title {
+      font-size: 24px;
+      line-height: @lh-30;
+    }
+
+    &__controls {
+      display: block;
+      top: 53%;
+      height: 50px;
+      width: 950px;
+      margin: 0 auto;
+
+      label {
+        display: none;
+        position: relative;
+        width: 25px;
+        height: 45px;
+        border-radius: 0;
+      }
+    }
+
+    #btn-1:checked ~ .review-slider__controls label[for='btn-3'],
+    #btn-2:checked ~ .review-slider__controls label[for='btn-1'],
+    #btn-3:checked ~ .review-slider__controls label[for='btn-2'] {
+      display: block;
+      background-color: transparent;
+      float: left;
+
+      &:hover {
+        &::before,
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &:active {
+        &::before,
+        &::after {
+          opacity: 0.3;
+        }
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: -3px;
+        width: 30px;
+        height: 2px;
+        background-color: #7e868f;
+        opacity: 0.6;
+      }
+
+      &::before {
+        top: 12px;
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        bottom: 11px;
+        transform: rotate(45deg);
+      }
+    }
+
+    #btn-1:checked ~ .review-slider__controls label[for='btn-2'],
+    #btn-2:checked ~ .review-slider__controls label[for='btn-3'],
+    #btn-3:checked ~ .review-slider__controls label[for='btn-1'] {
+      display: block;
+      background-color: transparent;
+      float: right;
+
+      &:hover {
+        &::before,
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &:active {
+        &::before,
+        &::after {
+          opacity: 0.3;
+        }
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        right: -3px;
+        width: 30px;
+        height: 2px;
+        background-color: #7e868f;
+        opacity: 0.6;
+      }
+
+      &::before {
+        top: 12px;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        bottom: 11px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+#btn-1:checked ~ .review-slider__slides-container .review-slider__slides {
+  transform: translate(0);
+}
+#btn-2:checked ~ .review-slider__slides-container .review-slider__slides {
+  transform: translate(-33.3%);
+}
+#btn-3:checked ~ .review-slider__slides-container .review-slider__slides {
+  transform: translate(-66.6%);
+}

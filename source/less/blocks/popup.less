@@ -1,0 +1,136 @@
+.popup {
+  display: none;
+  position: fixed;
+  top: 25%;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  width: 320px;
+  margin: 0 auto;
+  box-shadow: 0px 10px 50px -10px rgba(0,0,0,0.3);
+  z-index: 100;
+
+  @keyframes bounce {
+    0% { transform: translateY(-2000px); }
+    70% { transform: translateY(30px); }
+    90% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+
+  &--show {
+    display: block;
+    animation: bounce 0.6s;
+  }
+
+  &__text-container {
+    padding: 40px 20px 30px;
+    background: @color-white;
+    text-align: center;
+
+    h2 {
+      margin-bottom: 27px;
+      color: @color-black;
+      font-size: @fs-18;
+      font-weight: bold;
+      line-height: @lh-24;
+    }
+
+    p {
+      width: 270px;
+      margin: 0 auto;
+      font-size: @fs-14;
+      font-weight: 100;
+      line-height: @lh-24;
+    }
+  }
+
+
+  &__button-wrapper {
+    padding: 28px 0;
+    background: @color-grey-light;
+  }
+
+  &--success {
+    p {
+      margin-bottom: 0px;
+    }
+  }
+
+  &--error {
+    p {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media @landscape and (max-width: 599px){
+    top: 5%;
+  }
+
+  @media @landscape and (min-width: 600px) and (max-width: 699px){
+    top: 10%;
+  }
+
+  @media @landscape and (min-width: 700px) and (max-width: 800px){
+    top: 15%;
+  }
+
+  @media @tablet-width {
+    width: 460px;
+    border-radius: 5px;
+
+    &--error {
+      .popup__text-container {
+        border-radius: 5px;
+      }
+    }
+
+    &--success {
+      .popup__text-container {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      .popup__button-wrapper {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+
+    &__text-container {
+      h2 {
+        max-width: 300px;
+        margin: 0 auto 25px;
+        font-size: @fs-30;
+        line-height: @lh-40;
+      }
+
+      p {
+        width: 300px;
+        font-size: @fs-18;
+        line-height: @lh-24;
+      }
+    }
+
+    &__text-transfer {
+      display: none;
+    }
+  }
+
+  @media @desktop-width {
+    &--success {
+      width: 780px;
+
+      h2 {
+        max-width: 460px;
+      }
+
+      p {
+        width: 400px;
+      }
+
+      .button--popup-close {
+        width: 460px;
+      }
+    }
+  }
+}

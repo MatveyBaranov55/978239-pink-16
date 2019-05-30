@@ -1,0 +1,248 @@
+.photo-blog {
+  padding: 40px 0 22px;
+  background: @color-white;
+  font-family: @font-family-main;
+  text-align: center;
+
+  &__title {
+    width: 280px;
+    margin: 5px auto 50px;
+    font-size: @fs-14;
+    font-weight: normal;
+    line-height: @lh-30;
+  }
+
+  &__post {
+    max-width: 280px;
+    margin: 0 auto 21px;
+
+    &--panarama{
+      max-width: none;
+    }
+  }
+
+  &__post-panarama {
+    position: relative;
+    display: block;
+    line-height: 0;
+
+    img {
+      width: 100%;
+    }
+
+    &::before{
+      position: absolute;
+      top: 0;
+      right: 4%;
+      content: 'панорама дня';
+      width: 140px;
+      height: 36px;
+      font-size: @fs-12;
+      line-height: @lh-36;
+      text-transform: uppercase;
+      color: @color-white;
+      background-color: #d22856;
+    }
+  }
+
+  &__post-picture {
+    display: block;
+    line-height: 0;
+  }
+
+  &__post-content {
+    box-sizing: border-box;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 19px;
+    text-align: left;
+    background-color: #f2f2f2;
+
+    p {
+      margin: 0 0 6px;
+      font-size: @fs-14;
+      line-height: @lh-24;
+    }
+  }
+
+  &__post-author {
+    font-size: @fs-14;
+    line-height: @lh-24;
+  }
+
+  &__post-time {
+    text-transform: uppercase;
+    font-size: @fs-12;
+    line-height: @lh-24;
+    color: #79818a;
+  }
+
+  &__heart-icon {
+    line-height: @lh-26;
+    margin-right: 13px;
+    font-size: 22px;
+    font-weight: bold;
+    vertical-align: bottom;
+    text-decoration: none;
+    color: #d43560;
+  }
+
+  &__post-likes {
+    display: inline-block;
+    font-size: @fs-12;
+    line-height: @lh-18;
+    text-transform: uppercase;
+    color: #d43560;
+  }
+
+  @media @tablet-width {
+    padding-bottom: 40px;
+
+    &__title {
+      width: 440px;
+      margin: 50px auto 78px;
+      font-size: @fs-18;
+      line-height: @lh-30;
+
+      br {
+        display: none;
+      }
+    }
+
+    &__post {
+      display: flex;
+      flex-direction: column;
+      max-width: none;
+      width: 300px;
+      margin: 0 0 21px;
+
+      &--panarama {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &__post-panarama {
+      img {
+        max-height: 600px;
+      }
+
+      &::before{
+        top: 57px;
+        right: 3%;
+      }
+    }
+
+    &__post-picture {
+      img {
+        width: 300px;
+      }
+    }
+
+    &__post-content {
+      position: relative;
+      flex-grow: 1;
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+      padding: 19px;
+
+      p {
+        margin: 0 0 36px;
+        font-size: @fs-14;
+        line-height: @lh-24;
+      }
+
+      &--panarama {
+        position: relative;
+        max-width: 816px;
+        margin: 0 auto 50px;
+
+        p {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    &__post-wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 816px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    &__post-author {
+      max-width: 350px;
+    }
+
+    &__heart-icon {
+      position: absolute;
+      bottom: 19px;
+      right: 19px;
+      display: block;
+      max-width: 20px;
+      max-height: 30px;
+      overflow: hidden;
+
+      &--panarama {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+      }
+    }
+
+    &__post-likes {
+      position: absolute;
+      bottom: 19px;
+      left: 19px;
+      max-width: 150px;
+      max-height: 20px;
+      overflow: hidden;
+
+      &--panarama {
+        position: absolute;
+        top: 23px;
+        left: auto;
+        right: 70px;
+      }
+    }
+  }
+
+  @media @desktop-width {
+    &__title {
+      width: 580px;
+    }
+
+    &__post-panarama {
+      img {
+        max-height: 750px;
+      }
+
+      &::before{
+        top: 54px;
+        right: 10%;
+      }
+    }
+
+    &__post-content {
+      p {
+        font-size: @fs-14;
+        line-height: @lh-24;
+      }
+
+      &--panarama {
+        width: 100%;
+        max-width: 1170px;
+      }
+    }
+
+    &__post-wrap {
+      max-width: 1170px;
+      margin: 0 auto;
+      padding: 0 10.3%;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.developer {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  font-family: @font-family-main;
+  text-decoration: none;
+
+  svg {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    svg {
+      fill: @color-blue-dark;
+    }
+  }
+
+  &:active {
+    svg {
+      fill: #bec2c7;
+    }
+  }
+
+  &:link,
+  &:active,
+  &:visited {
+    color: @color-blue-dark;
+  }
+
+  &__text {
+    margin-right: 11px;
+    font-size: @fs-14;
+    font-weight: normal;
+    line-height: @lh-18;
+  }
+
+  @media @tablet-width {
+    margin: 0;
+  }
+}

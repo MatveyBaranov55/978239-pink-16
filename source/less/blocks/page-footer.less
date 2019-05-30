@@ -1,0 +1,64 @@
+.page-footer {
+  padding: 33px 5.8% 0;
+  background: @color-white;
+  text-align: center;
+
+  &--index-page {
+    display: none;
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 35px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+
+    &--disabled {
+      cursor: auto;
+
+      &:hover {
+        cursor: auto;
+        opacity: 1;
+      }
+
+      &:active {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media @tablet-width {
+    padding: 35px 5.8%;
+
+    &--index-page {
+      display: block;
+    }
+
+    &__data-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 816px;
+      margin: 0 auto;
+    }
+
+    &__logo {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media @desktop-width {
+    padding: 70px 10.3%;
+
+    &__data-container {
+      max-width: 1170px;
+    }
+  }
+}

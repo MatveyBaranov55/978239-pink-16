@@ -1,0 +1,132 @@
+.button {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto 20px;
+  padding: 15px;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-family: @font-family-main;
+  font-size: @fs-18;
+  font-weight: bold;
+  text-decoration: none;
+
+  &--download:link,
+  &--download:active,
+  &--download:visited {
+    color: @color-white;
+  }
+
+  &--download:hover {
+    background-color: @color-white;
+    color: #d22856;
+  }
+
+  &--download:active {
+    color: #f1becc;
+  }
+
+  &--send-form:hover,
+  &--popup-close:hover {
+    background-color: #1c9b5e;
+  }
+
+  &--send-form:active,
+  &--popup-close:active {
+    color: #61b98f;
+  }
+
+  &--active:hover {
+    background-color: #d22856;
+    color: @color-white;
+  }
+
+  &--active:active {
+    color: #e06989;
+  }
+
+  &--disabled:hover {
+    opacity: 1;
+  }
+
+  &--disabled:active {
+    color: #cbced2;
+    background-color: #b5b9be;
+  }
+
+  &--active {
+    color: #d22856;
+    border: 3px solid #d22856;
+  }
+
+  &--disabled {
+    color: #b5b9be;
+    border: 3px solid #b5b9be;
+    opacity: 0.6;
+  }
+
+  &--download {
+    max-width: 280px;
+    padding: 20px 0;
+    border: 3px solid white;
+    line-height: 1;
+  }
+
+  &--send-form,
+  &--popup-close {
+    width: 280px;
+    margin-top: 20px;
+    padding: 18px 0;
+    border: none;
+    border-radius: 5px;
+    color: @color-white;
+    background-color: @color-green;
+    line-height: @lh-30;
+    text-transform: uppercase;
+  }
+
+  &--send-form {
+    margin-bottom: 40px;
+  }
+
+  &__submit-photo,
+  &__reset-photo {
+    min-width: 280px;
+    background-color: transparent;
+    outline: none;
+  }
+
+  &__reset-photo {
+    margin-bottom: 0;
+  }
+
+  @media @tablet-width {
+    &--send-form {
+      float: left;
+      width: 300px;
+      margin: 0;
+    }
+
+    &--popup-close {
+      width: 300px;
+    }
+
+    &__submit-photo,
+    &__reset-photo {
+      min-width: 260px;
+      padding: 12px 15px;
+    }
+  }
+
+  @media @desktop-width {
+    &__submit-photo,
+    &__reset-photo {
+      min-width: 184px;
+      margin: 0;
+      padding: 12px 15px;
+    }
+
+    &__submit-photo {
+      margin-right: 5px;
+    }
+  }
+}
